@@ -3,7 +3,8 @@ package com.example.mlib;
 import android.util.Log;
 
 public class mClass {
-    static void method() {
+    static String method() {
         Log.d("mlib", "hello");
+        return "hello from mlib";
     }
 }
