@@ -14,7 +14,7 @@ public class mClass {
         return "hello from mlib";
     }
 
-    public mReading makeMeasurement(int mask) {
+    public static mReading makeMeasurement(int mask) {
         List<List<List<Integer>>> res = new ArrayList<>();
         int cores = Runtime.getRuntime().availableProcessors();
 
@@ -42,7 +42,7 @@ public class mClass {
         return new mReading(res, mask);
     }
 
-    public mReading findDiff(mReading r1, mReading r2) {
+    public static mReading findDiff(mReading r1, mReading r2) {
         if (r1.mask == r2.mask) {
             List<List<List<Integer>>> diff = new ArrayList<>();
             for (int i = 0; i < r1.reading.size(); i++) {
@@ -61,7 +61,7 @@ public class mClass {
         return null;
     }
 
-    class mReading {
+    static class mReading {
        private List<List<List<Integer>>> reading;
        private int mask;
 
@@ -76,7 +76,7 @@ public class mClass {
 
         public String toString() {
            StringBuilder res = new StringBuilder();
-           res.append(mask + "\n");
+           res.append(mask).append("\n");
             for (List<List<Integer>> proc : reading) {
                 for (List<Integer> state : proc) {
                     for (int value: state) {
