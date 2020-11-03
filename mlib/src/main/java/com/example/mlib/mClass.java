@@ -61,7 +61,7 @@ public class mClass {
         return null;
     }
 
-    static class mReading {
+    public static class mReading {
        private List<List<List<Integer>>> reading;
        private int mask;
 
